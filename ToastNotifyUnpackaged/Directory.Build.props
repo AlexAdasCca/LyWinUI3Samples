@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- 查找路径 -->
+  <PropertyGroup>
+    <_ParentProps>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))</_ParentProps>
+  </PropertyGroup>
+
+  <!-- 如果找到了才 Import -->
+  <Import Project="$(_ParentProps)" Condition="'$(_ParentProps)' != ''" />
+  <Import Project="$(MSBuildThisFileDirectory)HybridCRT.props" />
+</Project>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ToastNotifyUnpackaged.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:root="using:ToastNotifyUnpackaged"
+    xmlns:local="using:ToastNotifyUnpackaged.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded" >
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid RowDefinitions="3*,*,Auto">
+
+            <StackPanel x:Name="headerPanel" Grid.Row="0" Margin="10,10,10,0" Orientation="Horizontal">
+                <TextBlock Text="Toast Notification Sample" Style="{StaticResource HeaderTextStyle}"/>
+                <Button x:Name="ToastWithTextBoxButton" Content="Send WithTextBox" Margin="10,0,0,0" Click="SendToastWithTextBox_Click" />
+                <Button x:Name="ToastWithAvatarButton" Content="Send WithAvatar" Margin="10,0,0,0" Click="SendToastWithAvatar_Click" />
+                <Button x:Name="ToastWithImageButton" Content="Send WithImage" Margin="10,0,0,0" Click="SendToastWithImage_Click" />
+                <Button x:Name="ToastWithAudioButton" Content="Send WithAudio" Margin="10,0,0,0" Click="SendToastWithAudio_Click" />
+            </StackPanel>
+
+            <Grid RowDefinitions="Auto,*" Grid.Row="1" Margin="50,0,50,40" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <TextBlock Grid.Row="0" Margin="10,10,10,0" Style="{StaticResource SectionHeaderTextStyle}">
+                Received Notifications
+                </TextBlock>
+                <ListView x:Name="notificationBox"
+                Grid.Row="1"
+                Background="{ThemeResource ApplicationSecondaryForegroundThemeBrush}"
+                ScrollViewer.VerticalScrollBarVisibility="Visible"
+                CornerRadius="10">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Height" Value="24" />
+                            <Setter Property="MinHeight" Value="24" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

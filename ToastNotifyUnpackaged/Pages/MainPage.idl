@@ -1,0 +1,12 @@
+import "Pages/Notification.idl";
+
+namespace ToastNotifyUnpackaged.Pages
+{
+    [default_interface]
+    runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        static MainPage Current();
+        void NotificationReceived(Notification notification);
+    }
+}

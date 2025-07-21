@@ -1,0 +1,10 @@
+namespace ToastNotifyUnpackaged.Pages
+{
+    struct Notification
+    {
+        String  Originator;
+        String  Action;
+        Boolean HasInput;
+        String  Input;
+    };
+}
